@@ -1,0 +1,167 @@
+{{ 'section-faq-snippet.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="faq-snippet color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="faq-snippet__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="faq-snippet__eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="faq-snippet__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    <div class="faq-accordion" role="list">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'faq_item' -%}
+          <details class="faq-accordion__item faq-accordion__item--{{ block.settings.item_style | default: 'default' }}" role="listitem" {% if forloop.first %}open{% endif %} {{ block.shopify_attributes }}>
+            <summary
+              class="faq-accordion__btn"
+            >
+              <span>{{ block.settings.question }}</span>
+              <svg class="faq-accordion__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </summary>
+            <div class="faq-accordion__answer rte" id="faq-sn-{{ block.id }}">
+              {{ block.settings.answer | newline_to_br }}
+            </div>
+          </details>
+        {%- elsif block.type == '@app' -%}
+          <div class="faq-snippet__app-block" {{ block.shopify_attributes }}>{% render block %}</div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.see_all_text != blank -%}
+      <a href="{{ section.settings.see_all_link }}" class="faq-snippet__see-all">
+        {{ section.settings.see_all_text }}
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.faq-snippet.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "t:sections.faq-snippet.blocks.faq_item.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "item_style",
+          "label": "t:sections.faq-snippet.blocks.faq_item.settings.item_style.label",
+          "options": [
+            { "value": "default", "label": "t:sections.faq-snippet.blocks.faq_item.settings.item_style.options__1.label" },
+            { "value": "soft", "label": "t:sections.faq-snippet.blocks.faq_item.settings.item_style.options__2.label" }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "text",
+          "id": "question",
+          "label": "t:sections.faq-snippet.blocks.faq_item.settings.question.label",
+          "default": "Is this safe for sensitive skin?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "t:sections.faq-snippet.blocks.faq_item.settings.answer.label",
+          "default": "Yes. CLARTÉ was built for reactive skin. Retinaldehyde releases slowly. Gluconolactone stays on the surface. No fragrance. Start 3 nights per week and increase as you go."
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.faq-snippet.settings.header_content.content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:sections.faq-snippet.settings.eyebrow.label",
+      "default": "Common Questions"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.faq-snippet.settings.heading.label",
+      "default": "Everything You Need to Know"
+    },
+    {
+      "type": "text",
+      "id": "see_all_text",
+      "label": "t:sections.faq-snippet.settings.see_all_text.label",
+      "default": "See all FAQs"
+    },
+    {
+      "type": "url",
+      "id": "see_all_link",
+      "label": "t:sections.faq-snippet.settings.see_all_link.label",
+      "default": "/pages/faq"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-2"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header_padding.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top.label",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom.label",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.faq-snippet.presets.name",
+      "blocks": [
+        { "type": "faq_item", "settings": { "item_style": "soft", "question": "Is this safe for sensitive skin?", "answer": "Yes. CLARTÉ was built for reactive skin. Retinaldehyde releases slowly. Gluconolactone stays on the surface. No fragrance. Start 3 nights per week and increase as you go." } },
+        { "type": "faq_item", "settings": { "item_style": "default", "question": "How is retinaldehyde different from retinol?", "answer": "One step closer to the form your skin uses directly. Works faster at lower amounts. Less irritation. Not covered by EU retinol rules." } },
+        { "type": "faq_item", "settings": { "item_style": "default", "question": "When will I see results?", "answer": "Visible texture changes from week 2. Most users see full results by week 8." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

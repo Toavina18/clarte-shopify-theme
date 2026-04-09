@@ -1,0 +1,172 @@
+{{ 'section-usage-steps.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="usage-steps color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="usage-steps__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="usage-steps__eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="usage-steps__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'step' -%}
+        {%- assign fallback_step_number = forloop.index | prepend: '0' | slice: -2, 2 -%}
+        <div class="step-row step-row--{{ block.settings.row_style | default: 'default' }}" {{ block.shopify_attributes }}>
+          <div class="step-row__num">{{ block.settings.number_label | default: 'Step ' | append: fallback_step_number }}</div>
+          {%- if block.settings.instruction != blank -%}
+            <div class="step-row__instruction">{{ block.settings.instruction }}</div>
+          {%- endif -%}
+          {%- if block.settings.detail != blank -%}
+            <div class="step-row__detail">{{ block.settings.detail }}</div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if section.settings.warning_note != blank -%}
+      <p class="usage-warning-note">{{ section.settings.warning_note }}</p>
+    {%- endif -%}
+    {%- if section.settings.results_note != blank -%}
+      <p class="usage-results-note">{{ section.settings.results_note }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.usage-steps.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "step",
+      "name": "t:sections.usage-steps.blocks.step.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number_label",
+          "label": "t:sections.usage-steps.blocks.step.settings.number_label.label",
+          "default": "Step 01"
+        },
+        {
+          "type": "select",
+          "id": "row_style",
+          "label": "t:sections.usage-steps.blocks.step.settings.row_style.label",
+          "options": [
+            { "value": "default", "label": "t:sections.usage-steps.blocks.step.settings.row_style.options__1.label" },
+            { "value": "accent", "label": "t:sections.usage-steps.blocks.step.settings.row_style.options__2.label" }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "text",
+          "id": "instruction",
+          "label": "t:sections.usage-steps.blocks.step.settings.instruction.label",
+          "default": "Cleanse and pat dry"
+        },
+        {
+          "type": "textarea",
+          "id": "detail",
+          "label": "t:sections.usage-steps.blocks.step.settings.detail.label",
+          "default": "Apply to clean, dry skin for best absorption."
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.usage-steps.settings.header_content.content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:sections.usage-steps.settings.eyebrow.label",
+      "default": "How to Use"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.usage-steps.settings.heading.label",
+      "default": "Your Evening Routine, Simplified"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.usage-steps.settings.header_steps.content"
+    },
+    {
+      "type": "textarea",
+      "id": "warning_note",
+      "label": "t:sections.usage-steps.settings.warning_note.label",
+      "default": "Always use SPF in the morning when using retinaldehyde. Do not layer with other acids or strong vitamin C on the same night."
+    },
+    {
+      "type": "text",
+      "id": "results_note",
+      "label": "t:sections.usage-steps.settings.results_note.label",
+      "default": "Results: Visible texture changes from week 2. Full results at 8 weeks."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header_padding.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top.label",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom.label",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.usage-steps.presets.name",
+      "blocks": [
+        { "type": "step", "settings": { "number_label": "Step 01", "row_style": "default", "instruction": "Cleanse and pat dry", "detail": "Apply to clean, dry skin for best absorption." } },
+        { "type": "step", "settings": { "number_label": "Step 02", "row_style": "default", "instruction": "Apply 2–3 drops to your face each evening", "detail": "Start with 3 nights per week for the first 2 weeks. Increase to nightly as your skin adjusts." } },
+        { "type": "step", "settings": { "number_label": "Step 03", "row_style": "default", "instruction": "Follow with your moisturiser", "detail": "Layer your usual moisturiser on top to seal hydration." } },
+        { "type": "step", "settings": { "number_label": "Step 04", "row_style": "accent", "instruction": "Use SPF every morning", "detail": "Retinaldehyde increases photosensitivity. SPF is essential." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

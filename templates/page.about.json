@@ -1,0 +1,139 @@
+{
+  "sections": {
+    "about-hero": {
+      "type": "about-hero",
+      "settings": {
+        "eyebrow": "Our Story",
+        "heading": "We built CLARTÉ because nothing in the middle worked.",
+        "body": "There is a gap in skincare. At one end: cheap products that do little. At the other: expensive serums that work but cost too much to use daily. We looked at why that gap exists — and built around it.",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 64
+      }
+    },
+    "brand-mission": {
+      "type": "brand-mission",
+      "settings": {
+        "eyebrow": "Our Mission",
+        "statement": "\"To give everyone with textured skin access to the same actives found in clinic-grade serums — at a price that works every day.\"",
+        "body": "Precision skincare. Without the premium. Effective skincare should not cost €70 for 30ml. You should not ration your serum to twice a week just to make it last. Results come from using it daily. Daily use needs a price you can keep. CLARTÉ is €29 because that is what fair looks like.",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "brand-values": {
+      "type": "brand-values",
+      "blocks": {
+        "value-1": {
+          "type": "value",
+          "settings": {
+            "title": "Evidence First",
+            "description": "Every claim we make is traceable. We do not use words like \"miracle\" or \"guaranteed.\" We cite studies. We show data. We tell you what each ingredient does."
+          }
+        },
+        "value-2": {
+          "type": "value",
+          "settings": {
+            "title": "Safety First",
+            "description": "We made CLARTÉ for people who have been hurt by strong actives. Retinaldehyde is released slowly. Gluconolactone stays on the surface. Ceramides protect your barrier while skin repairs itself."
+          }
+        },
+        "value-3": {
+          "type": "value",
+          "settings": {
+            "title": "Honest Price",
+            "description": "€29. That is what it costs. We invest in the formula. Not the packaging markup. EU-compliant under Regulation 1223/2009. Safe for daily use. Every ingredient has a function — nothing decorative."
+          }
+        }
+      },
+      "block_order": [
+        "value-1",
+        "value-2",
+        "value-3"
+      ],
+      "settings": {
+        "eyebrow": "What We Stand For",
+        "heading": "What we stand for.",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "formulation-trust": {
+      "type": "formulation-trust",
+      "blocks": {
+        "trust-1": {
+          "type": "trust_item",
+          "settings": {
+            "text": "EU-formulated under Regulation 1223/2009"
+          }
+        },
+        "trust-2": {
+          "type": "trust_item",
+          "settings": {
+            "text": "Fragrance-free — no sensitising fragrance ingredients"
+          }
+        },
+        "trust-3": {
+          "type": "trust_item",
+          "settings": {
+            "text": "No added silicones — absorbs cleanly"
+          }
+        },
+        "trust-4": {
+          "type": "trust_item",
+          "settings": {
+            "text": "Tested on reactive skin types"
+          }
+        },
+        "trust-5": {
+          "type": "trust_item",
+          "settings": {
+            "text": "Every ingredient has a function — nothing decorative"
+          }
+        }
+      },
+      "block_order": [
+        "trust-1",
+        "trust-2",
+        "trust-3",
+        "trust-4",
+        "trust-5"
+      ],
+      "settings": {
+        "eyebrow": "The Formulation",
+        "heading": "Formulated by Cosmetic Scientists. Validated by Dermatologists.",
+        "body": "The best retinoid — retinaldehyde — was used by luxury brands to justify high prices. No brand made it available at a price you could sustain. We looked at why that gap exists. The answer was simple. CLARTÉ changes that. Advanced retinoid. Honest price. Made for daily use.",
+        "credential_1": "Clinical study (n=42, 8 weeks)",
+        "credential_2": "EU-formulated under Cosmetics Regulation 1223/2009",
+        "credential_3": "Retinaldehyde not covered by EU Regulation 2024/996",
+        "promise": "Our promise: If your skin does not visibly improve in 30 days of regular use, we refund you. No questions.",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "about-cta": {
+      "type": "cta-block",
+      "settings": {
+        "heading": "Start with €29.",
+        "subheading": "Advanced retinoid. Honest price. Visible results.",
+        "cta_text": "Shop CLARTÉ — €29",
+        "cta_link": "/products/clarte-retinaldehyde-texture-serum",
+        "cta_secondary_text": "Read our science ↓",
+        "cta_secondary_link": "/products/clarte-retinaldehyde-texture-serum#ingredients",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    }
+  },
+  "order": [
+    "about-hero",
+    "brand-mission",
+    "brand-values",
+    "formulation-trust",
+    "about-cta"
+  ]
+}

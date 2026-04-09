@@ -1,0 +1,128 @@
+{{ 'section-benefits-bar.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- assign svg_check = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>' -%}
+{%- assign svg_sun = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>' -%}
+{%- assign svg_layers = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>' -%}
+
+<div class="benefits-bar color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  {%- if section.settings.heading != blank -%}
+    <h2 class="benefits-bar__heading">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+  <div class="benefits-bar__inner">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'benefit' -%}
+        <div class="benefit-col" {{ block.shopify_attributes }}>
+          <div class="benefit-col__icon" aria-hidden="true">
+            {%- case forloop.index -%}
+              {%- when 1 -%}{{ svg_check }}
+              {%- when 2 -%}{{ svg_sun }}
+              {%- else -%}{{ svg_layers }}
+            {%- endcase -%}
+          </div>
+          {%- if block.settings.title != blank -%}
+            <div class="benefit-col__title">{{ block.settings.title }}</div>
+          {%- endif -%}
+          {%- if block.settings.description != blank -%}
+            <div class="benefit-col__desc">{{ block.settings.description }}</div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.benefits-bar.name",
+  "tag": "div",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "t:sections.benefits-bar.blocks.benefit.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.benefits-bar.blocks.benefit.settings.title.label",
+          "default": "Visibly Smoother Texture"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "t:sections.benefits-bar.blocks.benefit.settings.description.label",
+          "default": "Retinaldehyde speeds cell renewal. Rough, bumpy texture reduces from week two. Clinical data: texture improved after 8 weeks."
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.benefits-bar.settings.header_content.content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.benefits-bar.settings.heading.label",
+      "default": "What CLARTÉ does for your skin."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header_padding.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top.label",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom.label",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.benefits-bar.presets.name",
+      "blocks": [
+        { "type": "benefit", "settings": { "title": "Visibly Smoother Texture", "description": "Retinaldehyde speeds cell renewal. Rough, bumpy texture reduces from week two. Clinical data: texture improved after 8 weeks." } },
+        { "type": "benefit", "settings": { "title": "Refined Pore Appearance", "description": "Clear pores look smaller. Retinaldehyde refines pore walls. Gluconolactone dissolves dead skin around each pore. Up to 20% smaller at 8 weeks." } },
+        { "type": "benefit", "settings": { "title": "Makeup That Sits Better", "description": "Smooth skin is a better base. Foundation floats on instead of settling into bumps. Many users report needing less coverage." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

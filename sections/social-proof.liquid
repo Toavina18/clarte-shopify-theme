@@ -1,0 +1,202 @@
+{{ 'section-social-proof.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="social-proof color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  {%- if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.aggregate != blank -%}
+    <div class="social-proof__header page-width">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="social-proof__eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="social-proof__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.aggregate != blank -%}
+        <p class="social-proof__aggregate">{{ section.settings.aggregate }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="reviews-grid{% if section.settings.columns == '2' %} reviews-grid--2col{% endif %}">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'review' -%}
+          <div class="review-card review-card--{{ block.settings.card_style | default: 'default' }}" {{ block.shopify_attributes }}>
+            <div class="review-stars" aria-hidden="true">★★★★★</div>
+            {%- if block.settings.title != blank -%}
+              <p class="review-title">{{ block.settings.title }}</p>
+            {%- endif -%}
+            <p class="review-quote">{{ block.settings.quote }}</p>
+            <p class="review-author">{{ block.settings.author_name }}</p>
+            {%- if block.settings.author_detail != blank -%}
+              <p class="review-timeframe">{{ block.settings.author_detail }}</p>
+            {%- endif -%}
+          </div>
+        {%- when '@app' -%}
+          <div class="social-proof__app-block" {{ block.shopify_attributes }}>
+            {% render block %}
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+
+  {%- if section.settings.footer_link_text != blank -%}
+    <div class="social-proof__footer page-width">
+      <a href="{{ section.settings.footer_link_url }}" class="social-proof__footer-link">
+        {{ section.settings.footer_link_text }}
+      </a>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.social-proof.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "review",
+      "name": "t:sections.social-proof.blocks.review.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.social-proof.blocks.review.settings.title.label"
+        },
+        {
+          "type": "select",
+          "id": "card_style",
+          "label": "t:sections.social-proof.blocks.review.settings.card_style.label",
+          "options": [
+            { "value": "default", "label": "t:sections.social-proof.blocks.review.settings.card_style.options__1.label" },
+            { "value": "accent", "label": "t:sections.social-proof.blocks.review.settings.card_style.options__2.label" }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "t:sections.social-proof.blocks.review.settings.quote.label",
+          "default": "My makeup floats on now instead of sinking into bumps. I used less for the first time in years."
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "t:sections.social-proof.blocks.review.settings.author_name.label",
+          "default": "Charlotte, 27, London"
+        },
+        {
+          "type": "text",
+          "id": "author_detail",
+          "label": "t:sections.social-proof.blocks.review.settings.author_detail.label",
+          "default": "Results after 5 weeks"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.social-proof.settings.header_content.content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:sections.social-proof.settings.eyebrow.label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.social-proof.settings.heading.label",
+      "default": "Real Skin. Real Results."
+    },
+    {
+      "type": "text",
+      "id": "aggregate",
+      "label": "t:sections.social-proof.settings.aggregate.label"
+    },
+    {
+      "type": "text",
+      "id": "footer_link_text",
+      "label": "t:sections.social-proof.settings.footer_link_text.label"
+    },
+    {
+      "type": "url",
+      "id": "footer_link_url",
+      "label": "t:sections.social-proof.settings.footer_link_url.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.social-proof.settings.header_layout.content"
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "t:sections.social-proof.settings.columns.label",
+      "options": [
+        { "value": "2", "label": "t:sections.social-proof.settings.columns.options__1.label" },
+        { "value": "3", "label": "t:sections.social-proof.settings.columns.options__2.label" }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header_padding.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top.label",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom.label",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.social-proof.presets.name",
+      "blocks": [
+        { "type": "review", "settings": { "card_style": "default", "quote": "“My makeup floats on now instead of sinking into bumps. I used less for the first time in years.”", "author_name": "Charlotte, 27, London", "author_detail": "Results after 5 weeks" } },
+        { "type": "review", "settings": { "card_style": "accent", "quote": "“I've tried retinol before and it destroyed my skin. This is different. My texture is genuinely smoother after 6 weeks.”", "author_name": "Sofia, 34, Paris", "author_detail": "Results after 6 weeks" } },
+        { "type": "review", "settings": { "card_style": "default", "quote": "“The pores on my nose look smaller. I didn't believe it was possible. Now I use less concealer.”", "author_name": "Emma, 29, Amsterdam", "author_detail": "Results after 8 weeks" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

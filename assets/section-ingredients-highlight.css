@@ -1,0 +1,86 @@
+.ingredients-highlight {
+  background: var(--color-background);
+}
+.ingredients-highlight__header {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 32px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+.ingredients-highlight__eyebrow {
+  font-family: var(--font-body-family);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(var(--color-foreground), 0.75);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  display: block;
+}
+.ingredients-highlight__heading {
+  font-family: var(--font-heading-family);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  color: rgb(var(--color-foreground));
+}
+.ingredients-highlight__cards {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.active-card {
+  border-radius: 8px;
+  border: 1px solid rgb(var(--brand-border-subtle));
+  border-left: 4px solid var(--color-brand-primary);
+  background: rgb(var(--brand-surface-alt));
+  padding: 32px;
+}
+.active-card--accent {
+  background: var(--color-background);
+  border-color: var(--color-brand-primary);
+  box-shadow: var(--brand-shadow-card);
+}
+.active-card__name {
+  font-family: var(--font-heading-family);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: rgb(var(--color-foreground));
+  margin-bottom: 8px;
+}
+.active-card__tag {
+  font-family: var(--font-body-family);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-brand-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  display: block;
+}
+.active-card__desc {
+  font-family: var(--font-body-family);
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(var(--color-foreground), 0.75);
+  max-width: 600px;
+  margin-bottom: 12px;
+}
+.active-card__evidence {
+  font-family: var(--font-body-family);
+  font-size: 13px;
+  color: rgba(var(--color-foreground), 0.75);
+}
+@media (max-width: 768px) {
+  .ingredients-highlight__header,
+  .ingredients-highlight__cards {
+    padding: 0 16px;
+  }
+  .active-card {
+    padding: 24px 20px;
+  }
+}

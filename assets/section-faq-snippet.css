@@ -1,0 +1,103 @@
+.faq-snippet {
+  background: var(--color-background);
+}
+.faq-snippet__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.faq-snippet__eyebrow {
+  font-family: var(--font-body-family);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(var(--color-foreground), 0.75);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  display: block;
+}
+.faq-snippet__heading {
+  font-family: var(--font-heading-family);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgb(var(--color-foreground));
+}
+.faq-accordion {
+  border-top: 1px solid rgb(var(--brand-border-subtle));
+  margin-top: 32px;
+}
+.faq-accordion__item {
+  border-bottom: 1px solid rgb(var(--brand-border-subtle));
+  overflow: hidden;
+}
+.faq-accordion__item--soft {
+  background: rgb(var(--brand-surface-alt));
+  border-radius: 8px;
+  margin-top: 12px;
+  padding: 0 16px;
+}
+.faq-accordion__btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px 0;
+  font-family: var(--font-body-family);
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(var(--color-foreground));
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 16px;
+  list-style: none;
+}
+.faq-accordion__btn::-webkit-details-marker {
+  display: none;
+}
+.faq-accordion__btn:hover {
+  background: rgb(var(--brand-surface-alt));
+  color: var(--color-brand-primary);
+}
+.faq-accordion__chevron {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: rgba(var(--color-foreground), 0.75);
+  transition: transform 0.2s;
+}
+.faq-accordion__item[open] .faq-accordion__chevron {
+  transform: rotate(180deg);
+}
+.faq-accordion__answer {
+  font-family: var(--font-body-family);
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(var(--color-foreground), 0.75);
+  padding: 0 0 24px;
+}
+.faq-accordion__answer p:first-child {
+  margin-top: 0;
+}
+.faq-accordion__answer p:last-child {
+  margin-bottom: 0;
+}
+.faq-snippet__see-all {
+  font-family: var(--font-body-family);
+  font-size: 14px;
+  color: var(--color-brand-primary);
+  text-decoration: underline;
+  display: block;
+  text-align: center;
+  margin-top: 24px;
+}
+.faq-snippet__app-block {
+  margin-top: 24px;
+}
+@media (max-width: 768px) {
+  .faq-snippet__inner {
+    padding: 0 16px;
+  }
+}

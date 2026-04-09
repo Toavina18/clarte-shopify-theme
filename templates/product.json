@@ -1,0 +1,412 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "eyebrow": {
+          "type": "text",
+          "settings": {
+            "text": "Advanced Retinoid | 30ml",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "descriptor": {
+          "type": "text",
+          "settings": {
+            "text": "30ml / 1 fl oz — 0.05% Retinaldehyde",
+            "text_style": "subtitle"
+          }
+        },
+        "rating": {
+          "type": "text",
+          "settings": {
+            "text": "★★★★★ 4.8/5 (1,247 reviews)",
+            "text_style": "body"
+          }
+        },
+        "offer-1": {
+          "type": "offer_card",
+          "settings": {
+            "variant_title": "1 Month Supply",
+            "offer_description": "30ml · 1 bottle",
+            "price_label": "€29",
+            "shipping_note": "+ €4.95 shipping",
+            "cta_text": "Add to Cart — €29"
+          }
+        },
+        "offer-2": {
+          "type": "offer_card",
+          "settings": {
+            "variant_title": "2 Month Supply",
+            "offer_description": "60ml · 2 bottles · Save €5.80",
+            "price_label": "€52.20",
+            "compare_price_label": "Was €58",
+            "badge_text": "Popular",
+            "shipping_note": "Free shipping included",
+            "cta_text": "Add to Cart — €52.20"
+          }
+        },
+        "offer-3": {
+          "type": "offer_card",
+          "settings": {
+            "variant_title": "3 Month Supply",
+            "offer_description": "90ml · 3 bottles · Save €13.05",
+            "price_label": "€73.95",
+            "compare_price_label": "Was €87",
+            "badge_text": "Best Value",
+            "badge_style": "primary",
+            "shipping_note": "Free shipping included",
+            "cta_text": "Add to Cart — €73.95",
+            "default_selected": true
+          }
+        },
+        "offer-4": {
+          "type": "offer_card",
+          "settings": {
+            "variant_title": "Subscribe & Save",
+            "offer_description": "15% off every month · Cancel anytime",
+            "price_label": "€24.65/mo",
+            "compare_price_label": "Was €29",
+            "badge_text": "Smart Choice",
+            "badge_style": "alt",
+            "plan_style": "subscribe",
+            "shipping_note": "+ €4.95 shipping",
+            "cta_text": "Subscribe — €24.65/mo"
+          }
+        },
+        "trust_badges": {
+          "type": "text",
+          "settings": {
+            "text": "Free shipping over €40 · 30-day returns · EU-formulated",
+            "text_style": "pill_list"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "micro_review": {
+          "type": "text",
+          "settings": {
+            "text": "\"My texture improved visibly in 5 weeks.\" — Marie L.",
+            "text_style": "micro_quote"
+          }
+        },
+        "delivery_info": {
+          "type": "text",
+          "settings": {
+            "text": "Free shipping on orders over €40 · Dispatched in 24–48h",
+            "text_style": "meta"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow",
+        "title",
+        "descriptor",
+        "rating",
+        "offer-1",
+        "offer-2",
+        "offer-3",
+        "offer-4",
+        "trust_badges",
+        "buy_buttons",
+        "micro_review",
+        "delivery_info"
+      ],
+      "settings": {
+        "enable_sticky_info": false,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "offer_group_label": "Choose your supply:",
+        "show_sticky_mobile_cta": true,
+        "sticky_cta_name": "CLARTÉ Serum",
+        "sticky_cta_label": "Add to Cart",
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "benefits-bar": {
+      "type": "benefits-bar",
+      "blocks": {
+        "benefit-1": {
+          "type": "benefit",
+          "settings": {
+            "title": "Visibly Smoother Texture",
+            "description": "Retinaldehyde speeds cell renewal. Rough, bumpy texture reduces from week two. Clinical data: texture improved after 8 weeks."
+          }
+        },
+        "benefit-2": {
+          "type": "benefit",
+          "settings": {
+            "title": "Refined Pore Appearance",
+            "description": "Clear pores look smaller. Retinaldehyde refines pore walls. Gluconolactone dissolves dead skin around each pore. Up to 20% smaller at 8 weeks."
+          }
+        },
+        "benefit-3": {
+          "type": "benefit",
+          "settings": {
+            "title": "Makeup That Sits Better",
+            "description": "Smooth skin is a better base. Foundation floats on instead of settling into bumps. Many users report needing less coverage."
+          }
+        }
+      },
+      "block_order": [
+        "benefit-1",
+        "benefit-2",
+        "benefit-3"
+      ],
+      "settings": {
+        "heading": "What CLARTÉ does for your skin.",
+        "color_scheme": "scheme-1",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "ingredients-highlight": {
+      "type": "ingredients-highlight",
+      "blocks": {
+        "ing-1": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Retinaldehyde 0.05%",
+            "role": "Vitamin A Derivative",
+            "card_style": "accent",
+            "evidence_label": "Clinical evidence score: 8.5/10",
+            "description": "<p>Retinaldehyde is a retinoid — a vitamin A form. It is one step from what skin cells use. It works faster than retinol. Less irritation too. It speeds cell renewal. It fades marks. It refines pores. In CLARTÉ it is released slowly. This cuts the risk of a reaction. Not covered by EU retinol rules.</p>"
+          }
+        },
+        "ing-2": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Gluconolactone (PHA)",
+            "role": "Poly-Hydroxy Acid",
+            "card_style": "default",
+            "evidence_label": "Clinical evidence score: 7.8/10",
+            "description": "<p>Gluconolactone is a PHA acid. Its molecule is large. It stays on the skin surface. No deep burn. No irritation. It clears dead skin. It unclogs pores. It smooths texture. Safe for reactive skin.</p>"
+          }
+        },
+        "ing-3": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Ceramides Complex",
+            "role": "Barrier Lipids",
+            "card_style": "default",
+            "evidence_label": "Clinical evidence score: 7.2/10",
+            "description": "<p>Ceramides are lipids in your skin barrier. They stop water loss and block irritants. While retinaldehyde and gluconolactone resurface, ceramides repair. Skin stays strong and hydrated.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ing-1",
+        "ing-2",
+        "ing-3"
+      ],
+      "settings": {
+        "eyebrow": "The Actives",
+        "heading": "Three actives. One result.",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "usage-steps": {
+      "type": "usage-steps",
+      "blocks": {
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "number_label": "Step 01",
+            "row_style": "default",
+            "instruction": "Cleanse and pat dry",
+            "detail": "Apply to clean, dry skin for best absorption."
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "number_label": "Step 02",
+            "row_style": "default",
+            "instruction": "Apply 2–3 drops to your face each evening",
+            "detail": "Start with 3 nights per week for the first 2 weeks. Increase to nightly as your skin adjusts."
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "number_label": "Step 03",
+            "row_style": "default",
+            "instruction": "Follow with your moisturiser",
+            "detail": "Layer your usual moisturiser on top to seal hydration."
+          }
+        },
+        "step-4": {
+          "type": "step",
+          "settings": {
+            "number_label": "Step 04",
+            "row_style": "accent",
+            "instruction": "Use SPF every morning",
+            "detail": "Retinaldehyde increases photosensitivity. SPF is essential."
+          }
+        }
+      },
+      "block_order": [
+        "step-1",
+        "step-2",
+        "step-3",
+        "step-4"
+      ],
+      "settings": {
+        "eyebrow": "How to Use",
+        "heading": "Your Evening Routine, Simplified",
+        "warning_note": "Always use SPF in the morning when using retinaldehyde. Do not layer with other acids or strong vitamin C on the same night.",
+        "results_note": "Results: Visible texture changes from week 2. Full results at 8 weeks.",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "social-proof-product": {
+      "type": "social-proof",
+      "settings": {
+        "eyebrow": "Customer Reviews",
+        "heading": "What customers say.",
+        "aggregate": "★★★★★ 4.9 / 5 · 1,247 verified reviews",
+        "columns": "2",
+        "footer_link_text": "Load more reviews",
+        "footer_link_url": "#reviews",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      },
+      "blocks": {
+        "review-1": {
+          "type": "review",
+          "settings": {
+            "title": "Best skin I've ever had",
+            "card_style": "default",
+            "quote": "“After 3 weeks my skin texture is the best it has been. I actually like my face now.”",
+            "author_name": "Amélie, 29, Paris · Combination skin · Verified purchase · 3 weeks use",
+            "author_detail": ""
+          }
+        },
+        "review-2": {
+          "type": "review",
+          "settings": {
+            "title": "Gentle and effective",
+            "card_style": "accent",
+            "quote": "“My skin has never liked acids. I was scared. But this was gentle and it worked.”",
+            "author_name": "Fiona, 34, Edinburgh · Sensitive skin · Verified purchase · 6 weeks use",
+            "author_detail": ""
+          }
+        },
+        "review-3": {
+          "type": "review",
+          "settings": {
+            "title": "No more foundation at work",
+            "card_style": "default",
+            "quote": "“I stopped wearing foundation at work last month. My colleagues asked if I'd been on holiday.”",
+            "author_name": "Laure, 31, Lyon · Oily skin · Verified purchase · 8 weeks use",
+            "author_detail": ""
+          }
+        },
+        "review-4": {
+          "type": "review",
+          "settings": {
+            "title": "Half the price of my old serum",
+            "card_style": "default",
+            "quote": "“Same results as the serum I used to pay €70 for. Half the price.”",
+            "author_name": "Sarah, 42, Hamburg · Dry skin · Verified purchase · 10 weeks use",
+            "author_detail": ""
+          }
+        }
+      },
+      "block_order": [
+        "review-1",
+        "review-2",
+        "review-3",
+        "review-4"
+      ]
+    },
+    "faq-snippet": {
+      "type": "faq-snippet",
+      "blocks": {
+        "faq-1": {
+          "type": "faq_item",
+          "settings": {
+            "item_style": "soft",
+            "question": "Is this safe for sensitive skin?",
+            "answer": "Yes. CLARTÉ was built for reactive skin. Retinaldehyde releases slowly. Gluconolactone stays on the surface. No fragrance. Start 3 nights per week and increase as you go."
+          }
+        },
+        "faq-2": {
+          "type": "faq_item",
+          "settings": {
+            "item_style": "default",
+            "question": "How is retinaldehyde different from retinol?",
+            "answer": "One step closer to the form your skin uses directly. Works faster at lower amounts. Less irritation. Not covered by EU retinol rules."
+          }
+        },
+        "faq-3": {
+          "type": "faq_item",
+          "settings": {
+            "item_style": "default",
+            "question": "When will I see results?",
+            "answer": "Visible texture changes from week 2. Most users see full results by week 8."
+          }
+        }
+      },
+      "block_order": [
+        "faq-1",
+        "faq-2",
+        "faq-3"
+      ],
+      "settings": {
+        "eyebrow": "Common Questions",
+        "heading": "Everything You Need to Know",
+        "see_all_text": "See all FAQs →",
+        "see_all_link": "/pages/faq",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "product-cta": {
+      "type": "cta-block",
+      "settings": {
+        "heading": "Your skin, visibly smoother.",
+        "subheading": "€29. Free returns. No subscription required.",
+        "cta_text": "Add to Cart — €29",
+        "cta_link": "",
+        "guarantee": "Fragrance-free · No silicones · EU-formulated · Retinaldehyde not restricted by EU Regulation 2024/996",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    }
+  },
+  "order": [
+    "main",
+    "benefits-bar",
+    "ingredients-highlight",
+    "usage-steps",
+    "social-proof-product",
+    "faq-snippet",
+    "product-cta"
+  ]
+}

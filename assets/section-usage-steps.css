@@ -1,0 +1,93 @@
+.usage-steps {
+  background: var(--color-background);
+}
+.usage-steps__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.usage-steps__eyebrow {
+  font-family: var(--font-body-family);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(var(--color-foreground), 0.75);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  display: block;
+}
+.usage-steps__heading {
+  font-family: var(--font-heading-family);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgb(var(--color-foreground));
+  margin-bottom: 32px;
+}
+.step-row {
+  padding: 24px 0;
+  border-bottom: 1px solid rgb(var(--brand-border-subtle));
+}
+.step-row:first-of-type {
+  border-top: 1px solid rgb(var(--brand-border-subtle));
+}
+.step-row--accent {
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid rgb(var(--brand-border-subtle));
+  border-radius: 8px;
+  background: rgb(var(--brand-surface-alt));
+  margin-top: 16px;
+}
+.step-row--accent + .step-row {
+  border-top: 1px solid rgb(var(--brand-border-subtle));
+}
+.step-row__num {
+  font-family: var(--font-body-family);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-brand-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.step-row__instruction {
+  font-family: var(--font-body-family);
+  font-size: 15px;
+  font-weight: 500;
+  color: rgb(var(--color-foreground));
+  margin-bottom: 4px;
+}
+.step-row__detail {
+  font-family: var(--font-body-family);
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(var(--color-foreground), 0.75);
+}
+.usage-warning-note {
+  font-family: var(--font-body-family);
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(var(--color-foreground), 0.75);
+  font-style: italic;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid rgb(var(--brand-border-subtle));
+  background: rgb(var(--brand-surface-alt));
+  margin-top: 24px;
+}
+.usage-results-note {
+  font-family: var(--font-body-family);
+  font-size: 13px;
+  color: rgba(var(--color-foreground), 0.75);
+  margin-top: 16px;
+}
+@media (max-width: 768px) {
+  .usage-steps__inner {
+    padding: 0 16px;
+  }
+  .step-row--accent {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

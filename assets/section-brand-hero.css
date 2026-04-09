@@ -1,0 +1,116 @@
+.brand-hero {
+  background: var(--color-background);
+}
+.brand-hero__inner {
+  max-width: var(--page-width, 1200px);
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 48px;
+  align-items: center;
+}
+.brand-hero__eyebrow {
+  font-family: var(--font-body-family);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(var(--color-foreground), 0.75);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.brand-hero__heading {
+  font-family: var(--font-heading-family);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  line-height: 1.15;
+  color: rgb(var(--color-foreground));
+  max-width: 520px;
+  margin-bottom: 20px;
+}
+.brand-hero__subheading {
+  font-family: var(--font-body-family);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgb(var(--color-foreground));
+  max-width: 480px;
+  margin-bottom: 16px;
+}
+.brand-hero__stars {
+  font-family: var(--font-body-family);
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(var(--color-foreground), 0.75);
+  margin-bottom: 28px;
+}
+.brand-hero__ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 12px;
+}
+.brand-hero__offer {
+  font-family: var(--font-body-family);
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(var(--color-foreground), 0.75);
+  margin-top: 12px;
+}
+.brand-hero__offer-label {
+  margin-right: 4px;
+}
+.brand-hero__offer-link {
+  color: var(--color-brand-primary);
+  font-weight: 600;
+  text-decoration: underline;
+}
+.brand-hero__offer-suffix {
+  margin-left: 4px;
+}
+.brand-hero__cta-secondary {
+  font-family: var(--font-body-family);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-brand-primary);
+  text-decoration: underline;
+}
+.brand-hero__image-wrap {
+  position: relative;
+  aspect-ratio: 3/4;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgb(var(--brand-surface-alt));
+}
+.brand-hero__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.brand-hero__image-wrap .placeholder-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+@media (max-width: 768px) {
+  .brand-hero__inner {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+  .brand-hero__image-wrap {
+    order: -1;
+    height: 56vw;
+    aspect-ratio: auto;
+    border-radius: 0;
+    margin: 0 -16px;
+  }
+  .brand-hero__ctas .button {
+    width: 100%;
+    text-align: center;
+  }
+  .brand-hero__ctas {
+    align-items: stretch;
+  }
+}

@@ -1,0 +1,138 @@
+{{ 'section-brand-values.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- assign svg_grid = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>' -%}
+{%- assign svg_shield = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>' -%}
+{%- assign svg_info = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>' -%}
+
+<section class="brand-values color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  {%- if section.settings.eyebrow != blank -%}
+    <span class="brand-values__eyebrow">{{ section.settings.eyebrow }}</span>
+  {%- endif -%}
+  {%- if section.settings.heading != blank -%}
+    <h2 class="brand-values__heading">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+
+  <div class="brand-values__grid">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'value' -%}
+        <article class="value-card" {{ block.shopify_attributes }}>
+          <div class="value-card__icon" aria-hidden="true">
+            {%- case forloop.index -%}
+              {%- when 1 -%}{{ svg_grid }}
+              {%- when 2 -%}{{ svg_shield }}
+              {%- else -%}{{ svg_info }}
+            {%- endcase -%}
+          </div>
+          {%- if block.settings.title != blank -%}
+            <h3 class="value-card__title">{{ block.settings.title }}</h3>
+          {%- endif -%}
+          {%- if block.settings.description != blank -%}
+            <p class="value-card__desc">{{ block.settings.description }}</p>
+          {%- endif -%}
+        </article>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.brand-values.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "value",
+      "name": "t:sections.brand-values.blocks.value.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.brand-values.blocks.value.settings.title.label",
+          "default": "Evidence First"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "t:sections.brand-values.blocks.value.settings.description.label",
+          "default": "Every claim we make is traceable. We do not use words like \"miracle\" or \"guaranteed.\" We cite studies. We show data. We tell you what each ingredient does."
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.brand-values.settings.header_content.content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:sections.brand-values.settings.eyebrow.label",
+      "default": "What We Stand For"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.brand-values.settings.heading.label",
+      "default": "What we stand for."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header_padding.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top.label",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom.label",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.brand-values.presets.name",
+      "blocks": [
+        { "type": "value", "settings": { "title": "Evidence First", "description": "Every claim we make is traceable. We do not use words like \"miracle\" or \"guaranteed.\" We cite studies. We show data. We tell you what each ingredient does." } },
+        { "type": "value", "settings": { "title": "Safety First", "description": "We made CLARTÉ for people who have been hurt by strong actives. Retinaldehyde is released slowly. Gluconolactone stays on the surface. Ceramides protect your barrier while skin repairs itself." } },
+        { "type": "value", "settings": { "title": "Honest Price", "description": "€29. That is what it costs. We invest in the formula. Not the packaging markup. EU-compliant under Regulation 1223/2009. Safe for daily use. Every ingredient has a function — nothing decorative." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

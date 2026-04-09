@@ -1,0 +1,102 @@
+.quick-answers {
+  background: var(--color-background);
+}
+.quick-answers__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.quick-answers__eyebrow {
+  font-family: var(--font-body-family);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(var(--color-foreground), 0.75);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 16px;
+  display: block;
+}
+.quick-answers__heading {
+  font-family: var(--font-heading-family);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: rgb(var(--color-foreground));
+  text-align: center;
+  margin-bottom: 32px;
+}
+.qa-accordion {
+  border-top: 1px solid rgb(var(--brand-border-subtle));
+}
+.qa-accordion__item {
+  border-bottom: 1px solid rgb(var(--brand-border-subtle));
+  overflow: hidden;
+}
+.qa-accordion__item--soft {
+  background: rgb(var(--brand-surface-alt));
+  border-radius: 8px;
+  margin-top: 12px;
+  padding: 0 16px;
+}
+.qa-accordion__btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 56px;
+  padding: 12px 0;
+  font-family: var(--font-body-family);
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(var(--color-foreground));
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 16px;
+  list-style: none;
+}
+.qa-accordion__btn::-webkit-details-marker {
+  display: none;
+}
+.qa-accordion__btn:hover {
+  background: rgb(var(--brand-surface-alt));
+  color: var(--color-brand-primary);
+}
+.qa-accordion__chevron {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: rgba(var(--color-foreground), 0.75);
+  transition: transform 0.2s ease-in-out;
+}
+.qa-accordion__item[open] .qa-accordion__chevron {
+  transform: rotate(180deg);
+}
+.qa-accordion__answer {
+  font-family: var(--font-body-family);
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(var(--color-foreground), 0.75);
+  padding: 0 0 24px;
+}
+.qa-accordion__answer p:first-child {
+  margin-top: 0;
+}
+.qa-accordion__answer p:last-child {
+  margin-bottom: 0;
+}
+.quick-answers__see-all {
+  font-family: var(--font-body-family);
+  font-size: 14px;
+  color: var(--color-brand-primary);
+  text-decoration: underline;
+  display: block;
+  text-align: center;
+  margin-top: 24px;
+}
+@media (max-width: 768px) {
+  .quick-answers__inner {
+    padding: 0 16px;
+  }
+}

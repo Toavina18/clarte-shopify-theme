@@ -1,0 +1,162 @@
+{{ 'section-quick-answers.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="quick-answers color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="quick-answers__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="quick-answers__eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="quick-answers__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    <div class="qa-accordion" role="list">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'qa_item' -%}
+          <details class="qa-accordion__item qa-accordion__item--{{ block.settings.item_style | default: 'default' }}" role="listitem" {% if forloop.first %}open{% endif %} {{ block.shopify_attributes }}>
+            <summary
+              class="qa-accordion__btn"
+            >
+              <span>{{ block.settings.question }}</span>
+              <svg class="qa-accordion__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </summary>
+            <div class="qa-accordion__answer rte" id="qa-{{ block.id }}">
+              {{ block.settings.answer | newline_to_br }}
+            </div>
+          </details>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.see_all_text != blank -%}
+      <a href="{{ section.settings.see_all_link }}" class="quick-answers__see-all">
+        {{ section.settings.see_all_text }}
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.quick-answers.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "qa_item",
+      "name": "t:sections.quick-answers.blocks.qa_item.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "item_style",
+          "label": "t:sections.quick-answers.blocks.qa_item.settings.item_style.label",
+          "options": [
+            { "value": "default", "label": "t:sections.quick-answers.blocks.qa_item.settings.item_style.options__1.label" },
+            { "value": "soft", "label": "t:sections.quick-answers.blocks.qa_item.settings.item_style.options__2.label" }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "text",
+          "id": "question",
+          "label": "t:sections.quick-answers.blocks.qa_item.settings.question.label",
+          "default": "Can I return CLARTÉ?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "t:sections.quick-answers.blocks.qa_item.settings.answer.label",
+          "default": "Yes. Return within 30 days. Contact us first so we can arrange it. Refunds processed within 5 working days of receiving your return."
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.quick-answers.settings.header_content.content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:sections.quick-answers.settings.eyebrow.label",
+      "default": "Quick Answers"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.quick-answers.settings.heading.label",
+      "default": "Most answers are here."
+    },
+    {
+      "type": "text",
+      "id": "see_all_text",
+      "label": "t:sections.quick-answers.settings.see_all_text.label",
+      "default": "View Full FAQ"
+    },
+    {
+      "type": "url",
+      "id": "see_all_link",
+      "label": "t:sections.quick-answers.settings.see_all_link.label",
+      "default": "/pages/faq"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header_padding.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top.label",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom.label",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.quick-answers.presets.name",
+      "blocks": [
+        { "type": "qa_item", "settings": { "item_style": "soft", "question": "Can I return CLARTÉ?", "answer": "Yes. Return within 30 days. Contact us first so we can arrange it. Refunds processed within 5 working days of receiving your return." } },
+        { "type": "qa_item", "settings": { "item_style": "default", "question": "My order has not arrived.", "answer": "Check your shipping email for tracking. Most orders arrive in 3–5 working days. Over 7 days? Contact us at hello@clarteserum.com and we will sort it immediately." } },
+        { "type": "qa_item", "settings": { "item_style": "default", "question": "Can I use CLARTÉ on sensitive skin?", "answer": "Yes. Start 3 nights per week for the first 2 weeks. See the full guide on our FAQ page." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

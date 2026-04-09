@@ -1,0 +1,50 @@
+.brand-mission {
+  background: var(--color-background);
+}
+.brand-mission__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 32px;
+  text-align: center;
+}
+.brand-mission__accent {
+  width: 48px;
+  height: 4px;
+  background: var(--color-brand-primary);
+  margin: 0 auto 24px;
+}
+.brand-mission__eyebrow {
+  font-family: var(--font-body-family);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(var(--color-foreground), 0.75);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  display: block;
+}
+.brand-mission__statement {
+  font-family: var(--font-heading-family);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  line-height: 1.4;
+  color: rgb(var(--color-foreground));
+  font-style: italic;
+  margin-bottom: 24px;
+}
+.brand-mission__body {
+  font-family: var(--font-body-family);
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(var(--color-foreground), 0.75);
+  max-width: 600px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .brand-mission__inner {
+    padding: 0 16px;
+  }
+  .brand-mission__accent {
+    width: 36px;
+  }
+}

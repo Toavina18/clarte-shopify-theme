@@ -1,0 +1,67 @@
+.faq-contact-cta {
+  background: var(--color-background);
+}
+.faq-contact-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 32px;
+  text-align: center;
+}
+.faq-contact-cta__eyebrow {
+  font-family: var(--font-body-family);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(var(--color-foreground), 0.75);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  display: block;
+}
+.faq-contact-cta__heading {
+  font-family: var(--font-heading-family);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgb(var(--color-foreground));
+  margin-bottom: 12px;
+}
+.faq-contact-cta__body {
+  font-family: var(--font-body-family);
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(var(--color-foreground), 0.75);
+  max-width: 460px;
+  margin: 0 auto 24px;
+}
+.faq-contact-cta__email {
+  font-family: var(--font-body-family);
+  font-size: 14px;
+  color: var(--color-brand-primary);
+  text-decoration: none;
+  display: block;
+  margin-top: 12px;
+}
+.faq-contact-cta__email:hover {
+  text-decoration: underline;
+}
+.faq-contact-cta__divider {
+  width: 80px;
+  height: 1px;
+  background: rgb(var(--brand-border-subtle));
+  margin: 32px auto;
+}
+.faq-contact-cta__shop-nudge {
+  font-family: var(--font-body-family);
+  font-size: 14px;
+  color: rgba(var(--color-foreground), 0.75);
+  margin-bottom: 16px;
+}
+@media (max-width: 768px) {
+  .faq-contact-cta__inner {
+    padding: 0 16px;
+  }
+  .faq-contact-cta .button {
+    width: 100%;
+    text-align: center;
+  }
+}

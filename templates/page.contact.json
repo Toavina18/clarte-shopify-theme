@@ -1,0 +1,125 @@
+{
+  "sections": {
+    "contact-header": {
+      "type": "contact-header",
+      "settings": {
+        "eyebrow": "Get in Touch",
+        "heading": "We're here. Talk to us.",
+        "body": "We read every message. Skincare questions, orders, returns — all of it. Whether you have a question about your order, our formula, or just want to know if CLARTÉ is right for your skin — our team is ready.",
+        "promise": "We reply to every message within 24 hours.",
+        "hours": "Mon–Fri, 9:00–18:00 CET",
+        "email": "hello@clarteserum.com",
+        "email_label": "Email",
+        "response_time": "Reply within 24 hours",
+        "hours_label": "Support Hours",
+        "weekday_label": "Monday – Friday",
+        "weekday_hours": "9:00 – 18:00 CET",
+        "weekend_hours": "Saturday: 10:00–15:00 CET · Sunday: Closed",
+        "instagram_url": "#",
+        "instagram_label": "Instagram ↗",
+        "tiktok_url": "#",
+        "tiktok_label": "TikTok ↗",
+        "social_label": "Follow Us",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 80
+      }
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Send us a message",
+        "heading_size": "h2",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "quick-answers": {
+      "type": "quick-answers",
+      "blocks": {
+        "qa-1": {
+          "type": "qa_item",
+          "settings": {
+            "question": "Can I return CLARTÉ?",
+            "answer": "Yes. Return within 30 days. Contact us first so we can arrange it. Refunds processed within 5 working days of receiving your return.",
+            "item_style": "default"
+          }
+        },
+        "qa-2": {
+          "type": "qa_item",
+          "settings": {
+            "question": "My order has not arrived.",
+            "answer": "Check your shipping email for tracking. Most orders arrive in 3–5 working days. Over 7 days? Contact us at hello@clarteserum.com and we will sort it immediately.",
+            "item_style": "default"
+          }
+        },
+        "qa-3": {
+          "type": "qa_item",
+          "settings": {
+            "question": "Can I use CLARTÉ on sensitive skin?",
+            "answer": "Yes. Start 3 nights per week for the first 2 weeks. See the full guide on our FAQ page.",
+            "item_style": "default"
+          }
+        }
+      },
+      "block_order": [
+        "qa-1",
+        "qa-2",
+        "qa-3"
+      ],
+      "settings": {
+        "eyebrow": "Quick Answers",
+        "heading": "Most answers are here.",
+        "see_all_text": "View Full FAQ →",
+        "see_all_link": "/pages/faq",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "trust-columns": {
+      "type": "trust-columns",
+      "blocks": {
+        "col-1": {
+          "type": "trust_col",
+          "settings": {
+            "title": "Secure Checkout",
+            "detail": "SSL-encrypted. Your data is never stored or shared. Shopify-hosted payments."
+          }
+        },
+        "col-2": {
+          "type": "trust_col",
+          "settings": {
+            "title": "30-Day Returns",
+            "detail": "No visible improvement in 30 days of regular use? We refund you. No questions asked."
+          }
+        },
+        "col-3": {
+          "type": "trust_col",
+          "settings": {
+            "title": "Real Ingredients",
+            "detail": "EU-compliant formula. Fragrance-free. 24-hour reply on all business days."
+          }
+        }
+      },
+      "block_order": [
+        "col-1",
+        "col-2",
+        "col-3"
+      ],
+      "settings": {
+        "heading": "Our Commitments",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    }
+  },
+  "order": [
+    "contact-header",
+    "contact-form",
+    "quick-answers",
+    "trust-columns"
+  ]
+}

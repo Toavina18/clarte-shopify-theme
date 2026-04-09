@@ -1,0 +1,212 @@
+{
+  "sections": {
+    "brand-hero": {
+      "type": "brand-hero",
+      "settings": {
+        "eyebrow": "Advanced Retinoid Serum — retinaldehyde serum for textured skin",
+        "heading": "Smoother skin. In weeks.",
+        "subheading": "<p>CLARTÉ uses retinaldehyde (a precision retinoid), gluconolactone (a gentle acid), and ceramides (barrier builders) to smooth texture. Safe for reactive skin. From €29 · Save 15% on 3-month supply.</p>",
+        "stars_text": "★★★★★ EU-tested. Fragrance-free. Safe for sensitive skin.",
+        "cta_text": "Start Your Skin Reset — €29",
+        "cta_link": "/products/clarte-retinaldehyde-texture-serum",
+        "cta_secondary_text": "See how it works ↓",
+        "cta_secondary_link": "#how-it-works",
+        "secondary_offer_label": "Most popular:",
+        "secondary_offer_text": "3-month supply at €73.95",
+        "secondary_offer_link": "/products/clarte-retinaldehyde-texture-serum",
+        "secondary_offer_suffix": "— free shipping included",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 80
+      }
+    },
+    "trust-strip": {
+      "type": "trust-strip",
+      "blocks": {
+        "stat-1": {
+          "type": "stat",
+          "settings": {
+            "value": "8 Weeks",
+            "label": "To Visible Results",
+            "source": "Visible texture improvement in clinical study"
+          }
+        },
+        "stat-2": {
+          "type": "stat",
+          "settings": {
+            "value": "11×",
+            "label": "Faster Than Retinol",
+            "source": "Retinaldehyde works 11x faster than retinol"
+          }
+        },
+        "stat-3": {
+          "type": "stat",
+          "settings": {
+            "value": "20%",
+            "label": "Pore Size Reduction",
+            "source": "Pore size visibly reduced at 8 weeks"
+          }
+        }
+      },
+      "block_order": [
+        "stat-1",
+        "stat-2",
+        "stat-3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "product-highlight": {
+      "type": "product-highlight",
+      "blocks": {
+        "benefit-1": {
+          "type": "benefit",
+          "settings": {
+            "title": "Smooth texture",
+            "description": "CLARTÉ smooths rough, bumpy skin. Retinaldehyde speeds cell renewal. Gluconolactone clears surface buildup. No irritation."
+          }
+        },
+        "benefit-2": {
+          "type": "benefit",
+          "settings": {
+            "title": "Smaller-looking pores",
+            "description": "Clogged pores look large. CLARTÉ clears them. Retinaldehyde refines pore walls. Gluconolactone dissolves buildup around each pore. Visible in weeks."
+          }
+        },
+        "benefit-3": {
+          "type": "benefit",
+          "settings": {
+            "title": "A better base",
+            "description": "Makeup sits differently on smooth skin. It floats. It blends. It stays. Users need less of it."
+          }
+        }
+      },
+      "block_order": [
+        "benefit-1",
+        "benefit-2",
+        "benefit-3"
+      ],
+      "settings": {
+        "eyebrow": "The Formula",
+        "heading": "One serum. Three results.",
+        "body": "A serum built around your skin's real needs. Retinaldehyde, gluconolactone, and ceramides working together to deliver visible texture improvement.",
+        "cta_text": "Add to Cart — €29",
+        "cta_link": "/products/clarte-retinaldehyde-texture-serum",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "how-it-works": {
+      "type": "how-it-works",
+      "blocks": {
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "title": "Retinaldehyde Converts",
+            "description": "Your skin renews every 28 days. Retinaldehyde (a natural retinoid, one step from the form your skin uses) speeds this up. Old skin cells shed faster. Fresh, smooth cells reach the surface sooner."
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "title": "Gluconolactone Clears",
+            "description": "Gluconolactone (PHA — poly-hydroxy acid) works on top. Its large molecule stays at the surface. It exfoliates without going deep. No burn. No barrier damage."
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "title": "Ceramides Restore",
+            "description": "Ceramides (lipid molecules in your skin barrier) hold it all together. They replace what the acid removes. Skin stays hydrated while it repairs. No purge. No burn. Results from week two."
+          }
+        }
+      },
+      "block_order": [
+        "step-1",
+        "step-2",
+        "step-3"
+      ],
+      "settings": {
+        "eyebrow": "The Mechanism",
+        "heading": "Why smooth skin takes a serum.",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "social-proof": {
+      "type": "social-proof",
+      "blocks": {
+        "review-1": {
+          "type": "review",
+          "settings": {
+            "card_style": "default",
+            "quote": "“My makeup floats on now instead of sinking into bumps. I used less for the first time in years.”",
+            "author_name": "Charlotte, 27, London",
+            "author_detail": "Results after 5 weeks"
+          }
+        },
+        "review-2": {
+          "type": "review",
+          "settings": {
+            "card_style": "accent",
+            "quote": "“Same results as my €60 serum. Half the price. The ingredients checked out.”",
+            "author_name": "Marie, 38, Paris",
+            "author_detail": "Results after 6 weeks"
+          }
+        },
+        "review-3": {
+          "type": "review",
+          "settings": {
+            "card_style": "default",
+            "quote": "“My skin reacts to most things. This was gentle and it still worked.”",
+            "author_name": "Julia, 33, Berlin",
+            "author_detail": "Results after 7 weeks"
+          }
+        }
+      },
+      "block_order": [
+        "review-1",
+        "review-2",
+        "review-3"
+      ],
+      "settings": {
+        "eyebrow": "Customer Results",
+        "heading": "Real Skin. Real Results.",
+        "aggregate": "★★★★★ 4.9 / 5 based on 1,200+ verified reviews",
+        "columns": "3",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "cta-block": {
+      "type": "cta-block",
+      "settings": {
+        "heading": "Start with smoother skin.",
+        "intro_body": "You have tried a lot. Spent too much. Still not happy. We know that cycle. CLARTÉ was built to break it.",
+        "subheading": "Retinaldehyde (precision retinoid). Gluconolactone (gentle acid). Ceramides (barrier support). From €29. No lock-in. Free returns.",
+        "cta_text": "3-Month Supply — €73.95 (Save 15%)",
+        "cta_link": "/products/clarte-retinaldehyde-texture-serum?supply=3month",
+        "cta_secondary_text": "Or start with 1 month at €29 →",
+        "cta_secondary_link": "/products/clarte-retinaldehyde-texture-serum",
+        "guarantee": "Free shipping over €40 · EU-compliant · Fragrance-free · 30-day returns",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    }
+  },
+  "order": [
+    "brand-hero",
+    "trust-strip",
+    "product-highlight",
+    "how-it-works",
+    "social-proof",
+    "cta-block"
+  ]
+}

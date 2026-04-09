@@ -1,0 +1,236 @@
+{
+  "sections": {
+    "faq-header": {
+      "type": "faq-header",
+      "settings": {
+        "eyebrow": "Support",
+        "heading": "Your Questions. Plain Answers.",
+        "subheading": "Everything you need to know about retinaldehyde, our formula, usage, shipping, and returns.",
+        "show_jumps": true,
+        "jump_1": "Formula",
+        "jump_target_1": "formula",
+        "jump_2": "Ingredients",
+        "jump_target_2": "ingredients-faq",
+        "jump_3": "Safety",
+        "jump_target_3": "safety",
+        "jump_4": "Results",
+        "jump_target_4": "results",
+        "jump_5": "Shipping",
+        "jump_target_5": "shipping",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 64
+      }
+    },
+    "faq-categories": {
+      "type": "faq-categories",
+      "blocks": {
+        "category-1": {
+          "type": "category_heading",
+          "settings": {
+            "heading": "The Product",
+            "anchor_id": "formula"
+          }
+        },
+        "q-1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is CLARTÉ?",
+            "answer": "CLARTÉ is a daily face serum for textured skin. It has three actives: retinaldehyde (precision retinoid), gluconolactone (gentle acid), and ceramides (barrier builders). Together they smooth rough, bumpy skin — without irritating sensitive skin types.",
+            "item_style": "default"
+          }
+        },
+        "q-2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What does it do?",
+            "answer": "It helps reduce the look of rough texture, large pores, post-acne marks, and uneven tone. Visible results start at week 2 with regular use.",
+            "item_style": "default"
+          }
+        },
+        "q-3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What makes it different?",
+            "answer": "Most texture serums use retinol (which converts slowly and can irritate) or acids alone. CLARTÉ uses retinaldehyde — closer to the form your skin uses directly, 11× more potent than retinol, and better tolerated. At €29, it is below any comparable retinaldehyde formula.",
+            "item_style": "default"
+          }
+        },
+        "category-2": {
+          "type": "category_heading",
+          "settings": {
+            "heading": "Ingredients",
+            "anchor_id": "ingredients-faq"
+          }
+        },
+        "q-4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is retinaldehyde?",
+            "answer": "Retinaldehyde is a retinoid (vitamin A type). Your skin converts retinoids into retinoic acid — the form it uses to renew cells. Retinaldehyde is one step away. Less conversion needed. Works faster. Less irritation. In CLARTÉ it is released slowly over hours.",
+            "item_style": "default"
+          }
+        },
+        "q-5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is gluconolactone?",
+            "answer": "Gluconolactone is a poly-hydroxy acid (PHA). It has a large molecule that stays on the skin surface. It exfoliates gently — no deep penetration, no barrier damage. It clears dead cells, unclogs pores, and smooths texture. Good for reactive skin.",
+            "item_style": "default"
+          }
+        },
+        "q-6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why add ceramides to a texture serum?",
+            "answer": "Ceramides are lipids that make up your skin barrier. They stop water loss and block irritants. When you use actives like retinaldehyde, your barrier can weaken. Ceramides rebuild it as your skin resurfaces. You get smooth skin that is also healthy.",
+            "item_style": "default"
+          }
+        },
+        "category-3": {
+          "type": "category_heading",
+          "settings": {
+            "heading": "Safety and Sensitivity",
+            "anchor_id": "safety"
+          }
+        },
+        "q-7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I use this with sensitive or reactive skin?",
+            "answer": "Yes. CLARTÉ was built for reactive skin. Retinaldehyde releases slowly. Gluconolactone stays on the surface. No fragrance. No high-irritation ingredients. Start 3 nights per week. Increase over two weeks.",
+            "item_style": "default"
+          }
+        },
+        "q-8": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will my skin purge?",
+            "answer": "Some people get mild purging in the first 1–2 weeks — small spots coming to the surface. This clears itself. A reaction looks different: persistent redness, burning, or flaking. If that happens, stop use and contact us.",
+            "item_style": "default"
+          }
+        },
+        "q-9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I use it with other skincare?",
+            "answer": "Use CLARTÉ in the evening. Cleanse first. Apply CLARTÉ, then moisturiser. Do not layer with another acid or strong vitamin C the same night. Use SPF the next morning.",
+            "item_style": "default"
+          }
+        },
+        "category-4": {
+          "type": "category_heading",
+          "settings": {
+            "heading": "Results and Expectations",
+            "anchor_id": "results"
+          }
+        },
+        "q-10": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How fast will I see results?",
+            "answer": "Visible texture changes from week 2 with 3–5 nights per week of use. Full results by week 8. Pore size reduced up to 20% at 8 weeks in clinical testing.",
+            "item_style": "default"
+          }
+        },
+        "q-11": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if it does not work for me?",
+            "answer": "Contact us within 30 days of regular use. We will refund you — no questions asked.",
+            "item_style": "default"
+          }
+        },
+        "q-12": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is this a long-term product or a short course?",
+            "answer": "Long-term. Retinaldehyde speeds cell renewal — a process your skin runs every day. For lasting texture results, use it consistently over months. At €29, this is easy to sustain.",
+            "item_style": "default"
+          }
+        },
+        "category-5": {
+          "type": "category_heading",
+          "settings": {
+            "heading": "Order, Shipping, and Compliance",
+            "anchor_id": "shipping"
+          }
+        },
+        "q-13": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is CLARTÉ EU-compliant?",
+            "answer": "Yes. Formulated under EU Cosmetics Regulation 1223/2009. Retinaldehyde is not covered by EU retinol rules (Regulation 2024/996, active November 2025). Every ingredient meets EU safety standards.",
+            "item_style": "default"
+          }
+        },
+        "q-14": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Where do you ship?",
+            "answer": "EU and UK. Free shipping over €40. Standard delivery 3–5 working days. Express options at checkout.",
+            "item_style": "default"
+          }
+        },
+        "q-15": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I return CLARTÉ?",
+            "answer": "Return within 30 days of purchase. Contact our support team first. Refunds processed within 5 working days of receiving your return.",
+            "item_style": "default"
+          }
+        }
+      },
+      "block_order": [
+        "category-1",
+        "q-1",
+        "q-2",
+        "q-3",
+        "category-2",
+        "q-4",
+        "q-5",
+        "q-6",
+        "category-3",
+        "q-7",
+        "q-8",
+        "q-9",
+        "category-4",
+        "q-10",
+        "q-11",
+        "q-12",
+        "category-5",
+        "q-13",
+        "q-14",
+        "q-15"
+      ],
+      "settings": {
+        "padding_top": 64,
+        "padding_bottom": 80,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "faq-contact-cta": {
+      "type": "faq-contact-cta",
+      "settings": {
+        "eyebrow": "Still Have Questions?",
+        "heading": "Our Team Replies Within 24 Hours",
+        "body": "Can’t find what you’re looking for? Send us a message and we’ll get back to you with a personal answer.",
+        "cta_text": "Contact Us",
+        "cta_link": "/pages/contact",
+        "email": "hello@clarteserum.com",
+        "email_link_text": "Or email us at hello@clarteserum.com",
+        "shop_nudge_text": "Ready to try CLARTÉ?",
+        "shop_cta_text": "Shop the Serum",
+        "shop_nudge_link": "/products/clarte-retinaldehyde-texture-serum",
+        "color_scheme": "scheme-1",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    }
+  },
+  "order": [
+    "faq-header",
+    "faq-categories",
+    "faq-contact-cta"
+  ]
+}

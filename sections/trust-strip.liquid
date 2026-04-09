@@ -1,0 +1,109 @@
+{{ 'section-trust-strip.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="trust-strip color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="trust-strip__inner">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'stat' -%}
+          <div class="trust-item" {{ block.shopify_attributes }}>
+            <span class="trust-item__stat">{{ block.settings.value }}</span>
+            <span class="trust-item__label">{{ block.settings.label }}</span>
+            {%- if block.settings.source != blank -%}
+              <span class="trust-item__sub">{{ block.settings.source }}</span>
+            {%- endif -%}
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.trust-strip.name",
+  "tag": "div",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "t:sections.trust-strip.blocks.stat.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "value",
+          "label": "t:sections.trust-strip.blocks.stat.settings.value.label",
+          "default": "8 Weeks"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "t:sections.trust-strip.blocks.stat.settings.label.label",
+          "default": "To Visible Results"
+        },
+        {
+          "type": "text",
+          "id": "source",
+          "label": "t:sections.trust-strip.blocks.stat.settings.source.label"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-2"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header_padding.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top.label",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom.label",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.trust-strip.presets.name",
+      "blocks": [
+        {"type": "stat", "settings": {"value": "8 Weeks", "label": "To Visible Results", "source": "EU clinical participant data"}},
+        {"type": "stat", "settings": {"value": "94%", "label": "Softer Skin", "source": "Self-reported after 8 weeks"}},
+        {"type": "stat", "settings": {"value": "€29", "label": "Starting From", "source": "30ml — 2 month supply"}}
+      ]
+    }
+  ]
+}
+{% endschema %}

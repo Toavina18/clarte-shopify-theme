@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "page-header": {
+      "type": "main-page",
+      "disabled": false,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": ["page-header"]
+}

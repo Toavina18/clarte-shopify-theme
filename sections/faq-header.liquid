@@ -1,0 +1,177 @@
+{{ 'section-faq-header.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="faq-header color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="faq-header__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="faq-header__eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h1 class="faq-header__heading">{{ section.settings.heading }}</h1>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="faq-header__sub">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+    {%- if section.settings.show_jumps -%}
+      <nav class="faq-jumps" aria-label="Jump to FAQ section">
+        {%- if section.settings.jump_1 != blank -%}<a href="#{{ section.settings.jump_target_1 | default: section.settings.jump_1 | handle }}">{{ section.settings.jump_1 }}</a>{%- endif -%}
+        {%- if section.settings.jump_2 != blank -%}<a href="#{{ section.settings.jump_target_2 | default: section.settings.jump_2 | handle }}">{{ section.settings.jump_2 }}</a>{%- endif -%}
+        {%- if section.settings.jump_3 != blank -%}<a href="#{{ section.settings.jump_target_3 | default: section.settings.jump_3 | handle }}">{{ section.settings.jump_3 }}</a>{%- endif -%}
+        {%- if section.settings.jump_4 != blank -%}<a href="#{{ section.settings.jump_target_4 | default: section.settings.jump_4 | handle }}">{{ section.settings.jump_4 }}</a>{%- endif -%}
+        {%- if section.settings.jump_5 != blank -%}<a href="#{{ section.settings.jump_target_5 | default: section.settings.jump_5 | handle }}">{{ section.settings.jump_5 }}</a>{%- endif -%}
+      </nav>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.faq-header.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.faq-header.settings.header_content.content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:sections.faq-header.settings.eyebrow.label",
+      "default": "Support"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.faq-header.settings.heading.label",
+      "default": "Your Questions. Plain Answers."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "t:sections.faq-header.settings.subheading.label",
+      "default": "Everything you need to know about retinaldehyde, our formula, usage, shipping, and returns."
+    },
+    {
+      "type": "header",
+      "content": "t:sections.faq-header.settings.header_navigation.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_jumps",
+      "label": "t:sections.faq-header.settings.show_jumps.label",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "jump_1",
+      "label": "t:sections.faq-header.settings.jump_1.label",
+      "default": "Formula"
+    },
+    {
+      "type": "text",
+      "id": "jump_target_1",
+      "label": "t:sections.faq-header.settings.jump_target_1.label",
+      "default": "formula"
+    },
+    {
+      "type": "text",
+      "id": "jump_2",
+      "label": "t:sections.faq-header.settings.jump_2.label",
+      "default": "Ingredients"
+    },
+    {
+      "type": "text",
+      "id": "jump_target_2",
+      "label": "t:sections.faq-header.settings.jump_target_2.label",
+      "default": "ingredients-faq"
+    },
+    {
+      "type": "text",
+      "id": "jump_3",
+      "label": "t:sections.faq-header.settings.jump_3.label",
+      "default": "Safety"
+    },
+    {
+      "type": "text",
+      "id": "jump_target_3",
+      "label": "t:sections.faq-header.settings.jump_target_3.label",
+      "default": "safety"
+    },
+    {
+      "type": "text",
+      "id": "jump_4",
+      "label": "t:sections.faq-header.settings.jump_4.label",
+      "default": "Results"
+    },
+    {
+      "type": "text",
+      "id": "jump_target_4",
+      "label": "t:sections.faq-header.settings.jump_target_4.label",
+      "default": "results"
+    },
+    {
+      "type": "text",
+      "id": "jump_5",
+      "label": "t:sections.faq-header.settings.jump_5.label",
+      "default": "Shipping"
+    },
+    {
+      "type": "text",
+      "id": "jump_target_5",
+      "label": "t:sections.faq-header.settings.jump_target_5.label",
+      "default": "shipping"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header_padding.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top.label",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom.label",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.faq-header.presets.name"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,168 @@
+{{ 'section-faq-contact-cta.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="faq-contact-cta color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="faq-contact-cta__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="faq-contact-cta__eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="faq-contact-cta__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.body != blank -%}
+      <p class="faq-contact-cta__body">{{ section.settings.body }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.cta_text != blank -%}
+      <a href="{{ section.settings.cta_link }}" class="button button--primary">
+        {{ section.settings.cta_text }}
+      </a>
+    {%- endif -%}
+
+    {%- if section.settings.email != blank -%}
+      <a href="mailto:{{ section.settings.email }}" class="faq-contact-cta__email">
+        {{ section.settings.email_link_text | default: section.settings.email }}
+      </a>
+    {%- endif -%}
+
+    {%- if section.settings.shop_nudge_text != blank or section.settings.shop_nudge_link != blank -%}
+      <div class="faq-contact-cta__divider" aria-hidden="true"></div>
+      {%- if section.settings.shop_nudge_text != blank -%}
+        <p class="faq-contact-cta__shop-nudge">{{ section.settings.shop_nudge_text }}</p>
+      {%- endif -%}
+      {%- if section.settings.shop_cta_text != blank -%}
+        <a href="{{ section.settings.shop_nudge_link }}" class="button button--primary">
+          {{ section.settings.shop_cta_text }}
+        </a>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.faq-contact-cta.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.faq-contact-cta.settings.header_content.content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:sections.faq-contact-cta.settings.eyebrow.label",
+      "default": "Still Have Questions?"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.faq-contact-cta.settings.heading.label",
+      "default": "Our Team Replies Within 24 Hours"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "t:sections.faq-contact-cta.settings.body.label",
+      "default": "Can't find what you're looking for? Send us a message and we'll get back to you with a personal answer."
+    },
+    {
+      "type": "header",
+      "content": "t:sections.faq-contact-cta.settings.header_ctas.content"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "t:sections.faq-contact-cta.settings.cta_text.label",
+      "default": "Contact Us"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "t:sections.faq-contact-cta.settings.cta_link.label",
+      "default": "/pages/contact"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "t:sections.faq-contact-cta.settings.email.label",
+      "default": "hello@clarteserum.com"
+    },
+    {
+      "type": "text",
+      "id": "email_link_text",
+      "label": "t:sections.faq-contact-cta.settings.email_link_text.label",
+      "default": "Or email us at hello@clarteserum.com"
+    },
+    {
+      "type": "text",
+      "id": "shop_nudge_text",
+      "label": "t:sections.faq-contact-cta.settings.shop_nudge_text.label",
+      "default": "Ready to try CLARTÉ?"
+    },
+    {
+      "type": "text",
+      "id": "shop_cta_text",
+      "label": "t:sections.faq-contact-cta.settings.shop_cta_text.label",
+      "default": "Shop the Serum"
+    },
+    {
+      "type": "url",
+      "id": "shop_nudge_link",
+      "label": "t:sections.faq-contact-cta.settings.shop_nudge_link.label",
+      "default": "/products/clarte-retinaldehyde-texture-serum"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-2"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header_padding.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top.label",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom.label",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.faq-contact-cta.presets.name"
+    }
+  ]
+}
+{% endschema %}

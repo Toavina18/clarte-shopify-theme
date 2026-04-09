@@ -1,0 +1,135 @@
+{{ 'section-faq-categories.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="faq-categories color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="faq-categories__inner">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'category_heading' -%}
+          {%- unless forloop.first -%}</div><!-- /faq-accordion --></div><!-- /faq-category -->{%- endunless -%}
+          <div class="faq-category" id="{{ block.settings.anchor_id | default: block.settings.heading | handle }}" {{ block.shopify_attributes }}>
+            <div class="faq-category__divider" aria-hidden="true"></div>
+            <h2 class="faq-category__heading">{{ block.settings.heading }}</h2>
+            <div class="faq-accordion">
+        {%- when 'faq_item' -%}
+          {%- if forloop.first -%}<div class="faq-category" id="faq-start"><div class="faq-accordion">{%- endif -%}
+          <details class="faq-accordion__item faq-accordion__item--{{ block.settings.item_style | default: 'default' }}" {{ block.shopify_attributes }}>
+            <summary class="faq-accordion__btn">
+              <span>{{ block.settings.question }}</span>
+              <svg class="faq-accordion__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-accordion__answer rte">{{ block.settings.answer | newline_to_br }}</div>
+          </details>
+      {%- endcase -%}
+    {%- endfor -%}
+    {%- if section.blocks.size > 0 -%}</div></div>{%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.faq-categories.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "category_heading",
+      "name": "t:sections.faq-categories.blocks.category_heading.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.faq-categories.blocks.category_heading.settings.heading.label",
+          "default": "The Product"
+        },
+        {
+          "type": "text",
+          "id": "anchor_id",
+          "label": "t:sections.faq-categories.blocks.category_heading.settings.anchor_id.label",
+          "default": "formula"
+        }
+      ]
+    },
+    {
+      "type": "faq_item",
+      "name": "t:sections.faq-categories.blocks.faq_item.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "item_style",
+          "label": "t:sections.faq-categories.blocks.faq_item.settings.item_style.label",
+          "options": [
+            { "value": "default", "label": "t:sections.faq-categories.blocks.faq_item.settings.item_style.options__1.label" },
+            { "value": "soft", "label": "t:sections.faq-categories.blocks.faq_item.settings.item_style.options__2.label" }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "text",
+          "id": "question",
+          "label": "t:sections.faq-categories.blocks.faq_item.settings.question.label",
+          "default": "What is CLARTÉ?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "t:sections.faq-categories.blocks.faq_item.settings.answer.label",
+          "default": "Write the answer here."
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header_padding.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top.label",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom.label",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.faq-categories.presets.name"
+    }
+  ]
+}
+{% endschema %}

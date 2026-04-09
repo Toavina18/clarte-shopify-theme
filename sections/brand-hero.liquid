@@ -1,0 +1,216 @@
+{{ 'section-brand-hero.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="brand-hero color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="brand-hero__inner">
+    <div class="brand-hero__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="brand-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h1 class="brand-hero__heading">{{ section.settings.heading }}</h1>
+      {%- endif -%}
+
+      {%- if section.settings.subheading != blank -%}
+        <div class="brand-hero__subheading">{{ section.settings.subheading }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.stars_text != blank -%}
+        <p class="brand-hero__stars">{{ section.settings.stars_text }}</p>
+      {%- endif -%}
+
+      <div class="brand-hero__ctas">
+        {%- if section.settings.cta_text != blank -%}
+          <a href="{{ section.settings.cta_link }}" class="button button--primary">
+            {{ section.settings.cta_text }}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.cta_secondary_text != blank -%}
+          <a href="{{ section.settings.cta_secondary_link }}" class="brand-hero__cta-secondary">
+            {{ section.settings.cta_secondary_text }}
+          </a>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.secondary_offer_label != blank or section.settings.secondary_offer_text != blank or section.settings.secondary_offer_suffix != blank -%}
+        <p class="brand-hero__offer">
+          {%- if section.settings.secondary_offer_label != blank -%}
+            <span class="brand-hero__offer-label">{{ section.settings.secondary_offer_label }}</span>
+          {%- endif -%}
+          {%- if section.settings.secondary_offer_text != blank -%}
+            <a href="{{ section.settings.secondary_offer_link }}" class="brand-hero__offer-link">
+              {{ section.settings.secondary_offer_text }}
+            </a>
+          {%- endif -%}
+          {%- if section.settings.secondary_offer_suffix != blank -%}
+            <span class="brand-hero__offer-suffix">{{ section.settings.secondary_offer_suffix }}</span>
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+    </div>
+
+    <div class="brand-hero__image-wrap">
+      {%- if section.settings.image != blank -%}
+        {{
+          section.settings.image
+          | image_url: width: 900
+          | image_tag:
+            loading: 'eager',
+            widths: '375, 550, 750, 900',
+            sizes: '(min-width: 769px) 55vw, 100vw'
+        }}
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.brand-hero.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.brand-hero.settings.header_content.content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:sections.brand-hero.settings.eyebrow.label",
+      "default": "Advanced Retinoid Serum — retinaldehyde serum for textured skin"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.brand-hero.settings.heading.label",
+      "default": "Smoother skin. In weeks."
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "t:sections.brand-hero.settings.subheading.label",
+      "default": "<p>CLARTÉ uses retinaldehyde (a precision retinoid), gluconolactone (a gentle acid), and ceramides (barrier builders) to smooth texture. Safe for reactive skin. From €29 · Save 15% on 3-month supply.</p>"
+    },
+    {
+      "type": "text",
+      "id": "stars_text",
+      "label": "t:sections.brand-hero.settings.stars_text.label",
+      "default": "★★★★★ EU-tested. Fragrance-free. Safe for sensitive skin."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "t:sections.brand-hero.settings.cta_text.label",
+      "default": "Start Your Skin Reset — €29"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "t:sections.brand-hero.settings.cta_link.label",
+      "default": "/products/clarte-retinaldehyde-texture-serum"
+    },
+    {
+      "type": "text",
+      "id": "cta_secondary_text",
+      "label": "t:sections.brand-hero.settings.cta_secondary_text.label",
+      "default": "See how it works ↓"
+    },
+    {
+      "type": "url",
+      "id": "cta_secondary_link",
+      "label": "t:sections.brand-hero.settings.cta_secondary_link.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.brand-hero.settings.header_offer.content"
+    },
+    {
+      "type": "text",
+      "id": "secondary_offer_label",
+      "label": "t:sections.brand-hero.settings.secondary_offer_label.label",
+      "default": "Most popular:"
+    },
+    {
+      "type": "text",
+      "id": "secondary_offer_text",
+      "label": "t:sections.brand-hero.settings.secondary_offer_text.label",
+      "default": "3-month supply at €73.95"
+    },
+    {
+      "type": "url",
+      "id": "secondary_offer_link",
+      "label": "t:sections.brand-hero.settings.secondary_offer_link.label",
+      "default": "/products/clarte-retinaldehyde-texture-serum"
+    },
+    {
+      "type": "text",
+      "id": "secondary_offer_suffix",
+      "label": "t:sections.brand-hero.settings.secondary_offer_suffix.label",
+      "default": "— free shipping included"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.brand-hero.settings.header_image.content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.brand-hero.settings.image.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header_padding.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top.label",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom.label",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.brand-hero.presets.name"
+    }
+  ]
+}
+{% endschema %}
